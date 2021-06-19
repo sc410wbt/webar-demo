@@ -4,7 +4,7 @@ import s from './SensorTest.module.sass'
 
 function SensorTestPage() {
 
-	const [stats, setStats] = useState(null)
+	const [orientation, setOrientation] = useState({ alpha: 0, beta: 0, gamma: 0 })
 	const [accel, setAccel] = useState({ x: 0, y: 0, z: 0 })
 
 	useEffect(() => {
@@ -40,10 +40,11 @@ function SensorTestPage() {
 		})
 		window.addEventListener('deviceorientation',(event) => {
 			// Expose each orientation angle in a more readable way
-			let rotation_degrees = event.alpha
-			let frontToBack_degrees = event.beta
-			let leftToRight_degrees = event.gamma
-			setStats(rotation_degrees + ' ' + frontToBack_degrees + ' ' + leftToRight_degrees)
+			setOrientation({
+				alpha: event.alpha.toFixed(2),
+				beta: event.beta.toFixed(2),
+				gamma: event.gamma.toFixed(2)
+			})
 
 			// // Update velocity according to how tilted the phone is
 			// // Since phones are narrower than they are long, double the increase to the x velocity
@@ -76,7 +77,10 @@ function SensorTestPage() {
 			<div className={s.dev}>
 				<div onClick={getPermissions}>Dev Stats:</div>
 				<div>
-					{stats}
+					<div>Orientation</div>
+					<div>Rotate (alpha): {orientation.alpha}</div>
+					<div>Front to Back (beta): {orientation.beta}</div>
+					<div>Left to Right (gamma): {orientation.gamma}</div>
 				</div>
 				<div>
 					<div>Motion</div>
