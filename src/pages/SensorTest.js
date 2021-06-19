@@ -79,9 +79,9 @@ function SensorTestPage() {
 				</div>
 				<div>
 					<div>Motion</div>
-					<div>x: 0</div>
-					<div>y: 0</div>
-					<div>z: 0</div>
+					<div>x: {accel.x}</div>
+					<div>y: {accel.y}</div>
+					<div>z: {accel.z}</div>
 				</div>
 			</div>
 		</div>
