@@ -6,20 +6,21 @@ function SensorTestPage() {
 		// let video = document.createElement('video')
 		let video = document.querySelector('video')
 		if (navigator.mediaDevices.getUserMedia) {
-			navigator.mediaDevices.getUserMedia({ video: true })
+			navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
 				.then(function (stream) {
 					video.srcObject = stream;
 				})
 				.catch(function (err0r) {
 					console.log("Something went wrong!");
 				});
+
 		}
 	}, [])
 
 	return (
 		<div>
 			Testing Sensor APIs
-			<video width={500} height={350}>
+			<video autoPlay={true} muted playsInline={true} width={500} height={350}>
 
 			</video>
 		</div>
