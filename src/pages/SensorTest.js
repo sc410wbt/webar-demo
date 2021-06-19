@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 
 import s from './SensorTest.module.sass'
 
+let x = 0
+
 function SensorTestPage() {
 
 	const [orientation, setOrientation] = useState({ alpha: 0, beta: 0, gamma: 0 })
@@ -39,6 +41,7 @@ function SensorTestPage() {
 			let ea = event.acceleration
 			setAccel({ x: ea.x.toFixed(2), y: ea.y.toFixed(2), z: ea.z.toFixed(2) })
 			setPosition({ x: position.x + ea.x, y: position.y + ea.y, z: position.z + ea.z })
+			x += ea.x
 		})
 		window.addEventListener('deviceorientation',(event) => {
 			// Expose each orientation angle in a more readable way
@@ -79,8 +82,8 @@ function SensorTestPage() {
 			<div className={s.dev}>
 				<div onClick={getPermissions}>Dev Stats:</div>
 				<div>
-					<div>Position</div>
-					<div>x: {position.x}</div>
+					<div>Position*n</div>
+					<div>x: {x}</div>
 					<div>y: {position.y}</div>
 					<div>z: {position.z}</div>
 				</div>
