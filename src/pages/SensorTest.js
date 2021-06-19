@@ -1,11 +1,13 @@
 import React, {useEffect} from 'react'
 
+import s from './SensorTest.module.sass'
+
 function SensorTestPage() {
 
 	useEffect(() => {
 		// let video = document.createElement('video')
 		let video = document.querySelector('video')
-		if (navigator.mediaDevices.getUserMedia) {
+		if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 			navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
 				.then(function (stream) {
 					video.srcObject = stream;
@@ -18,7 +20,7 @@ function SensorTestPage() {
 	}, [])
 
 	return (
-		<div>
+		<div className={s.wrapper}>
 			Testing Sensor APIs
 			<video autoPlay={true} muted playsInline={true} width={500} height={350}>
 
