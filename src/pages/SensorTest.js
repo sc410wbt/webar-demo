@@ -36,7 +36,7 @@ function SensorTestPage() {
 	function bindDeviceSensors() {
 		window.addEventListener('devicemotion', (event) => {
 			let ea = event.acceleration
-			setAccel({ x: ea.x, y: ea.y, 	z: ea.z })
+			setAccel({ x: ea.x.toFixed(2), y: ea.y.toFixed(2), z: ea.z.toFixed(2) })
 		})
 		window.addEventListener('deviceorientation',(event) => {
 			// Expose each orientation angle in a more readable way
