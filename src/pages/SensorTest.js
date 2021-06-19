@@ -34,12 +34,12 @@ function SensorTestPage() {
 
 	function bindDeviceSensors() {
 		window.addEventListener('deviceorientation',(event) => {
-			setStats(event.toString())
 			// Expose each orientation angle in a more readable way
-			// rotation_degrees = event.alpha;
-			// frontToBack_degrees = event.beta;
-			// leftToRight_degrees = event.gamma;
-			//
+			let rotation_degrees = event.alpha;
+			let frontToBack_degrees = event.beta;
+			let leftToRight_degrees = event.gamma;
+			setStats(rotation_degrees + ' ' + frontToBack_degrees + ' ' + leftToRight_degrees)
+
 			// // Update velocity according to how tilted the phone is
 			// // Since phones are narrower than they are long, double the increase to the x velocity
 			// vx = vx + leftToRight_degrees * updateRate*2;
