@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/webar-demo/static/css/main.d5ebc87e.chunk.css",
-    "main.js": "/webar-demo/static/js/main.08d7d735.chunk.js",
-    "main.js.map": "/webar-demo/static/js/main.08d7d735.chunk.js.map",
+    "main.js": "/webar-demo/static/js/main.ed98e6b2.chunk.js",
+    "main.js.map": "/webar-demo/static/js/main.ed98e6b2.chunk.js.map",
     "runtime-main.js": "/webar-demo/static/js/runtime-main.1d538fe4.js",
     "runtime-main.js.map": "/webar-demo/static/js/runtime-main.1d538fe4.js.map",
     "static/js/2.d01f9cbe.chunk.js": "/webar-demo/static/js/2.d01f9cbe.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.1d538fe4.js",
     "static/js/2.d01f9cbe.chunk.js",
     "static/css/main.d5ebc87e.chunk.css",
-    "static/js/main.08d7d735.chunk.js"
+    "static/js/main.ed98e6b2.chunk.js"
   ]
 }
