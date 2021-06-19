@@ -82,9 +82,9 @@ function SensorTestPage() {
 					<div>Motion</div>
 					<div>mx: {(accel.x > 0.2) ? 'right' : (accel.x < -0.2) ? 'left' : 'none'}</div>
 					<div>x: {accel.x}</div>
-					<div>my: {(accel.x > 0.2) ? 'jump' : (accel.x < -0.2) ? 'duck' : 'none'}</div>
+					<div>my: {(accel.y > 0.2) ? 'jump' : (accel.y < -0.2) ? 'duck' : 'none'}</div>
 					<div>y: {accel.y}</div>
-					<div>mz: {(accel.x > 0.2) ? 'forward' : (accel.x < -0.2) ? 'back' : 'none'}</div>
+					<div>mz: {(accel.z > 0.2) ? 'forward' : (accel.z < -0.2) ? 'back' : 'none'}</div>
 					<div>z: {accel.z}</div>
 				</div>
 			</div>
