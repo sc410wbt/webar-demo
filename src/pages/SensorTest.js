@@ -6,6 +6,7 @@ function SensorTestPage() {
 
 	const [orientation, setOrientation] = useState({ alpha: 0, beta: 0, gamma: 0 })
 	const [accel, setAccel] = useState({ x: 0, y: 0, z: 0 })
+	const [position, setPosition] = useState({ x: 0, y: 0, z: 0 })
 
 	useEffect(() => {
 		// let video = document.createElement('video')
@@ -37,6 +38,7 @@ function SensorTestPage() {
 		window.addEventListener('devicemotion', (event) => {
 			let ea = event.acceleration
 			setAccel({ x: ea.x.toFixed(2), y: ea.y.toFixed(2), z: ea.z.toFixed(2) })
+			setPosition({ x: position.x + ea.x, y: position.y + ea.y, z: position.z + ea.z })
 		})
 		window.addEventListener('deviceorientation',(event) => {
 			// Expose each orientation angle in a more readable way
@@ -76,6 +78,12 @@ function SensorTestPage() {
 			<video autoPlay={true} muted playsInline={true} />
 			<div className={s.dev}>
 				<div onClick={getPermissions}>Dev Stats:</div>
+				<div>
+					<div>Position</div>
+					<div>x: {position.x}</div>
+					<div>y: {position.y}</div>
+					<div>z: {position.z}</div>
+				</div>
 				<div>
 					<div>Orientation</div>
 					<div>Rotate (alpha): {orientation.alpha}</div>
