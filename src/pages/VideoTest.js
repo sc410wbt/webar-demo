@@ -15,6 +15,8 @@ let video
 
 function VideoTestPage() {
 
+	const [playing, setPlaying] = useState(false)
+
 	useEffect(() => {
 		console.log('setting up virtual environment')
 		window.scrollTo(0, 0)
@@ -43,10 +45,6 @@ function VideoTestPage() {
 		light()
 		animate()
 
-		setTimeout(() => {
-			video.play()
-		}, 1000)
-
 	}, [])
 
 	function populate() {
@@ -62,7 +60,7 @@ function VideoTestPage() {
 		video.loop = true
 		video.preload = 'auto'
 		video.playsInline = true
-		video.muted = true
+		// video.muted = true
 		video.autoplay = true
 		// video.poster = poster
 
@@ -96,9 +94,16 @@ function VideoTestPage() {
 		requestAnimationFrame(animate)
 	}
 
+	function playVideo() {
+		setPlaying(true)
+		scene.rotation.set(0, 1.5, 0)
+		video.play()
+	}
+
 	return (
 		<div>
 			<div className={s.webgl} />
+			<div className={s.play + ' ' + (playing === true ? s.hidden : '')} onClick={playVideo}>Play</div>
 		</div>
 	)
 }
