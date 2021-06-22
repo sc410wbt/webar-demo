@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react'
 import * as THREE from 'three'
 import {OrbitControls} from '../OrbitControls'
 
-import exampleSrc from '../textures/pano.mp4'
+// import exampleSrc from '../textures/pano.mp4'
+import exampleSrc from '../textures/youtube-short.mp4'
 
 import s from './VideoTest.module.sass'
 
