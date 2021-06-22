@@ -1,11 +1,12 @@
 import logo from './logo.svg'
 import './App.css'
-import SensorTestPage from "./pages/SensorTest"
+// import SensorTestPage from "./pages/SensorTest"
+import VideoTestPage from "./pages/VideoTest"
 
 function App() {
 	return (
 		<div>
-			<SensorTestPage />
+			<VideoTestPage />
 		</div>
 	)
 }
